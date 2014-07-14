@@ -20,7 +20,7 @@ public class AppTest2
 
             DefaultHttpClient httpClient = new DefaultHttpClient();
             HttpGet getRequest = new HttpGet(
-                    "http://merchant.qa.gep-api.stg-jpe1.rpaas.stg.jp.local/shipping-status/list?mallId=my");
+                    "http://merchant.qa.gep-api.stg-jpe1.rpaas.stg.jp.local/shipping-location/list?mallId=gb");
             getRequest.addHeader("accept", "application/json");
             getRequest.addHeader("X-Client-Id", "uiui");
 
@@ -44,14 +44,9 @@ public class AppTest2
                 String indented = mapper.defaultPrettyPrintingWriter().writeValueAsString(json);
                 System.out.println(indented);
             }
-
             httpClient.getConnectionManager().shutdown();
-
-
         } catch (Exception e) {
-
             e.printStackTrace();
-
         }
     }
 }
